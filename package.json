@@ -1,18 +1,14 @@
 {
   "name": "jsonrepl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "preload json data from file into repl",
   "main": "bin/jrepl",
   "bin": {
     "jrepl": "./bin/jrepl"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amir-s/jsonrepl.git"
-  },
+  "repository": "expressjs/express",
   "keywords": [
     "json",
     "repl"
