@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var repl = require('repl');
+var fs = require('fs');
+
+if (process.argv[2] === undefined) {
+	console.error("Usage: jrepl FILE.JSON");
+	process.exit(1);
+}
+let data = JSON.parse(fs.readFileSync(path.resolve(process.argv[2]), 'utf-8'));
+var replServer = repl.start({
+	prompt: "jrepl > ",
+});
+replServer.context.data = data;

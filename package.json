@@ -1,0 +1,26 @@
+{
+  "name": "jsonrepl",
+  "version": "0.0.1",
+  "description": "preload json data from file into repl",
+  "main": "bin/jrepl",
+  "bin": {
+    "jrepl": "./bin/jrepl"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amir-s/jsonrepl.git"
+  },
+  "keywords": [
+    "json",
+    "repl"
+  ],
+  "author": "Amir Saboury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amir-s/jsonrepl/issues"
+  },
+  "homepage": "https://github.com/amir-s/jsonrepl#readme"
+}
