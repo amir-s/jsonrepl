@@ -1,6 +1,6 @@
 {
   "name": "jsonrepl",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "preload json data from file into repl",
   "main": "bin/jrepl",
   "bin": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
   },
-  "repository": "expressjs/express",
+  "repository": "amir-s/jsonrepl",
   "keywords": [
     "json",
     "repl"
