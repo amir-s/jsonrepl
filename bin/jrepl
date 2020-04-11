@@ -1,15 +1,43 @@
 #!/usr/bin/env node
 
-var path = require('path');
-var repl = require('repl');
-var fs = require('fs');
+const path = require("path");
+const repl = require("repl");
+const fs = require("fs");
+
+Object.defineProperty(Array.prototype, "group", {
+  enumerable: false,
+  value: function (key) {
+    const map = {};
+    this.map((e) => ({ k: key(e), d: e })).forEach((e) => {
+      map[e.k] = map[e.k] || [];
+      map[e.k].push(e.d);
+    });
+    return Object.keys(map).map((k) => ({ key: k, data: map[k] }));
+  },
+});
+
+Object.defineProperty(Array.prototype, "unique", {
+  enumerable: false,
+  value: function (key) {
+    const values = {};
+    const fn = key || ((v) => v);
+    return this.filter((e) => {
+      if (values[fn(e)]) return false;
+      values[fn(e)] = true;
+      return true;
+    });
+  },
+});
 
 if (process.argv[2] === undefined) {
-	console.error("Usage: jrepl FILE.JSON");
-	process.exit(1);
+  console.error("Usage: jrepl FILE.JSON");
+  process.exit(1);
 }
-let data = JSON.parse(fs.readFileSync(path.resolve(process.argv[2]), 'utf-8'));
-var replServer = repl.start({
-	prompt: "jrepl > ",
+
+const data = JSON.parse(
+  fs.readFileSync(path.resolve(process.argv[2]), "utf-8")
+);
+const replServer = repl.start({
+  prompt: "jrepl > ",
 });
 replServer.context.data = data;

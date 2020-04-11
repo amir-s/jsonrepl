@@ -1,13 +1,12 @@
 {
   "name": "jsonrepl",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "preload json data from file into repl",
   "main": "bin/jrepl",
   "bin": {
     "jrepl": "./bin/jrepl"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "repository": "amir-s/jsonrepl",
   "keywords": [
     "json",
